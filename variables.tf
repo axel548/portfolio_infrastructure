@@ -3,7 +3,7 @@ variable "location" {
   default = "eastus"
 }
 
-variable "suscrpiption_id" {
+variable "subscription_id" {
   type        = string
   description = "ID de la suscripción de Azure"
 }
@@ -19,6 +19,18 @@ variable "resource_group_name" {
 }
 
 variable "storage_account_name" {
-  type = string
+  type    = string
   default = project_name + "-storage"
+}
+
+variable "budget_amount" {
+  type        = number
+  description = "Monto para la alerta de presupuesto"
+  default     = 5
+}
+
+variable "budget_contact_emails" {
+  type        = list(string)
+  description = "Lista de correos para notificaciones de presupuesto"
+  default     = ["axel.aatl@gmail.com"]
 }
