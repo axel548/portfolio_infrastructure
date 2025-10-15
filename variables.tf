@@ -15,12 +15,12 @@ variable "project_name" {
 
 variable "resource_group_name" {
   type    = string
-  default = project_name + "-dev"
+  default = "portfolio-dev"
 }
 
 variable "storage_account_name" {
   type    = string
-  default = project_name + "-storage"
+  default = "portfolio-storage"
 }
 
 variable "budget_amount" {
