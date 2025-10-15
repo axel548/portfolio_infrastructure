@@ -7,10 +7,10 @@ module "rg" {
 
 # 2️⃣ Storage Account
 module "storage" {
-  source                = "./modules/storage_account"
-  rg_name               = module.rg.name
-  location              = module.rg.location
-  storage_account_name  = var.storage_account_name
+  source               = "./modules/storage_account"
+  rg_name              = module.rg.name
+  location             = module.rg.location
+  storage_account_name = var.storage_account_name
 }
 
 # 3️⃣ Budget Alert
