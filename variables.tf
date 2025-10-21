@@ -15,7 +15,7 @@ variable "project_name" {
 
 variable "resource_group_name" {
   type    = string
-  default = "portfolio-dev"
+  default = "rg-portfolio-dev"
 }
 
 variable "storage_account_name" {
@@ -32,5 +32,8 @@ variable "budget_amount" {
 variable "budget_contact_emails" {
   type        = list(string)
   description = "Lista de correos para notificaciones de presupuesto"
-  default     = ["axel.aatl@gmail.com"]
+}
+
+variable "email_receiver" {
+  type    = string
 }
