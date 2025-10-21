@@ -2,13 +2,13 @@
 # Action Group (para recibir alertas)
 # --------------------------------------------------------
 resource "azurerm_monitor_action_group" "email_alerts" {
-  name                = "portfolio-alert-group"
-  resource_group_name = azurerm_resource_group.rg.name
-  short_name          = "alertgrp"
+  name                = var.name_email_alerts
+  resource_group_name = var.resource_group_name
+  short_name          = var.short_name_email_alerts
 
   email_receiver {
-    name                    = "Axel"
-    email_address           = "axel@example.com" # <-- Cambia por tu correo real
+    name                    = var.name_receiver
+    email_address           = var.email_receiver
     use_common_alert_schema = true
   }
 }
@@ -17,10 +17,10 @@ resource "azurerm_monitor_action_group" "email_alerts" {
 # Presupuesto mensual con alertas de costo
 # --------------------------------------------------------
 resource "azurerm_consumption_budget_subscription" "budget_storage" {
-  name            = "portfolio-storage-budget"
-  amount          = var.amount # Límite mensual en USD
+  name            = var.name_budget_storage
+  amount          = var.amount
   time_grain      = "Monthly"
-  subscription_id = var.subscription_id
+  subscription_id = "/subscriptions/${var.subscription_id}"
 
   time_period {
     start_date = "2025-10-01T00:00:00Z"

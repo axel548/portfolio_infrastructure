@@ -1,3 +1,3 @@
-output "budget_suscription_name" {
-  value = azurerm_consumption_budget_subscription.budget_suscription.name
+output "budget_subscription_name" {
+  value = azurerm_consumption_budget_subscription.budget_storage.name
 }
