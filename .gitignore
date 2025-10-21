@@ -1,28 +1,52 @@
-# Local Terraform directories
-.terraform/
-
-# Local Terraform state files
+# === Terraform ===
+# Archivos locales de estado
 *.tfstate
-*.tfstate.backup
+*.tfstate.*
+*.tfvars
+*.tfvars.json
 
-# Crash log files
+# Archivos de respaldo y bloqueo
+*.backup
+*.bak
+*.log
+.terraform.lock.hcl
+
+# Directorio interno de Terraform
+.terraform/
 crash.log
-
-# Exclude override files as they are usually local
 override.tf
 override.tf.json
 *_override.tf
 *_override.tf.json
 
-# Exclude CLI configuration files
-.terraformrc
-terraform.rc
+# === Archivos de credenciales ===
+# Evita subir claves o configuraciones locales
+*.pem
+*.key
+*.crt
+*.pfx
+*.cer
 
-# Sensitive variable files (if you store credentials here)
-*.tfvars
-*.tfvars.json
-
-# IDE / Editor files (optional)
-*.swp
-*.vscode/
+# === Archivos específicos de IDEs ===
+# VS Code
+.vscode/
+# IntelliJ / JetBrains
 .idea/
+# Linux/MacOS
+.DS_Store
+# Windows
+Thumbs.db
+
+# === Archivos temporales o de depuración ===
+*.tmp
+*.swp
+*.swo
+
+# === Planes locales de Terraform ===
+terraform.tfplan
+*.plan
+
+# === Credenciales de nube ===
+# (por seguridad, evita subir estos archivos si los usas localmente)
+azureprofile.json
+credentials
