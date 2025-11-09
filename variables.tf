@@ -20,7 +20,8 @@ variable "resource_group_name" {
 
 variable "storage_account_name" {
   type    = string
-  default = "portfolio-storage"
+  default = "portfoliostoragedev" # El nombre debe ser único a nivel global 
+  # TODO: Agregar una función para generar un nombre único
 }
 
 variable "budget_amount" {
@@ -36,4 +37,9 @@ variable "budget_contact_emails" {
 
 variable "email_receiver" {
   type    = string
+}
+
+
+variable "tags_dev" {
+  type = map(string)
 }
